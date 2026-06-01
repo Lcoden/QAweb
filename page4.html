@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טכניקות בדיקה - QA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* עיצוב קופסאות ייחודי לטכניקות */
+        .techniques-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .tech-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .tech-box:hover {
+            transform: scale(1.02);
+        }
+
+        .tech-icon {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            flex-shrink: 0;
+        }
+
+        .tech-content {
+            padding: 20px;
+        }
+
+        .tech-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        /* צבעים שונים לכל קופסה */
+        .black-box-style { border-right: 10px solid #b000b0; }
+        .black-box-style .tech-icon { background-color: #fff1ff; color: #b000b0; }
+
+        .white-box-style { border-right: 10px solid #b000b0; }
+        .white-box-style .tech-icon { background-color: #fff1ff; color: #b000b0; }
+
+        .exploratory-style { border-right: 10px solid #b000b0; }
+        .exploratory-style .tech-icon { background-color: #fff1ff; color: #b000b0; }
+    </style>
+</head>
+<body>
+
+    
+   <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="home.html">דף הבית</a></li>
+                <li><a href="page1.html">סיכום בדיקות</a></li>
+                <li><a href="page2.html">סביבות בדיקה</a></li>
+                <li><a href="page3.html">מושגים בתקשורת</a></li>
+                <li><a href="page4.html">טכניקות בדיקה</a></li>
+                <li><a href="page5.html">תהליך הבדיקות</a></li>
+                <li><a href="page6.html">מסמכי בדיקות</a></li>
+                <li><a href="page7.html">ניהול תקלות</a></li>
+                <li><a href="page8.html">שיטת הAGILE</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>טכניקות בדיקה</h1>
+        <p style="text-align: center; color: #666;">בחירת הטכניקה המתאימה עוזרת להגדיר את היקף הבדיקות וניהול הסיכונים.</p>
+
+        <div class="techniques-container">
+            
+            <div class="tech-box black-box-style">
+                <div class="tech-icon">⬛</div>
+                <div class="tech-content">
+                    <div class="tech-title">קופסה שחורה</div>
+                    <p>טכניקה בה נבחנות דרישות השימוש החיצוניות של המערכת על ידי קלט ופלט של פעולות חיצוניות ולא על פי המבנה הפנימי שלה.</p>
+                </div>
+            </div>
+
+            <div class="tech-box white-box-style">
+                <div class="tech-icon">⬜</div>
+                <div class="tech-content">
+                    <div class="tech-title">קופסה לבנה</div>
+                    <p>טכניקה המתייחסת למה שקורה במבנה הפנימי של התוכנה. המטרה העיקרית היא לבדוק אם המערכת עובדת כמו שצריך מבפנים.</p>
+                </div>
+            </div>
+
+            <div class="tech-box exploratory-style">
+                <div class="tech-icon">🔍</div>
+                <div class="tech-content">
+                    <div class="tech-title">חקירה חופשית</div>
+                    <p>שלב תכנון וביצוע הבדיקות נעשה תוך כדי הרצת הבדיקות. המטרה היא לכסות את דרישות המשתמש תוך כדי חקירה ולספק משוב מהיר.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer style="text-align: center; margin-top: 40px; color: #888;">
+        מדריך QA לבודקי תוכנה &copy; 2026
+    </footer>
+</body>
+</html>

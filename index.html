@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פירוט סוגי בדיקות תוכנה - QA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-grey: #3b3d3d;
+            --secondary-purple: #b000b0;
+            --light-bg: hsl(300, 50%, 88%);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fce4ec;
+            background-image: url('https://img.icons8.com/ios/100/000000/todo-list.png');
+            background-size: 80px 80px;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+       
+
+        
+        .nav-sidebar {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 200px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .nav-sidebar a {
+            display: block;
+            color: var(--primary-teal);
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .nav-sidebar a:hover { color: var(--secondary-purple); }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: hwb(0 91% 0%);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        h1 { color: var(--primary-teal); border-bottom: 4px; padding-bottom: 15px; }
+        h2 { color: var(--secondary-purple); margin-top: 40px; border-right: 5px solid var(--primary-teal); padding-right: 15px; }
+        h3 { color: var(--primary-teal); background: hsl(300, 41%, 91%); padding: 8px; border-radius: 5px; }
+
+        .test-card {
+            border: 1px solid hsl(300, 22%, 58%);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .test-card:hover { transform: scale(1.01); border-color: var(--primary-teal); }
+
+        .highlight { font-weight: bold; color: var(--primary-teal); }
+        
+        .mobile-web-box {
+            display: flex;
+            gap: 20px;
+            background: hwb(320 78% 6%);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px dashed var(--primary-teal);
+        }
+
+        @media (max-width: 768px) {
+            .nav-sidebar { display: none; }
+            .container { margin: 10px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+ 
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="home.html">דף הבית</a></li>
+                <li><a href="page1.html">סיכום בדיקות</a></li>
+                <li><a href="page2.html">סביבות בדיקה</a></li>
+                <li><a href="page3.html">מושגים בתקשורת</a></li>
+                <li><a href="page4.html">טכניקות בדיקה</a></li>
+                <li><a href="page5.html">תהליך הבדיקות</a></li>
+                <li><a href="page6.html">מסמכי בדיקות</a></li>
+                <li><a href="page7.html">ניהול תקלות</a></li>
+                <li><a href="page8.html">שיטת הAGILE</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="nav-sidebar">
+        <a href="#func">בדיקות פונקציונליות</a>
+        <a href="#non-func">בדיקות לא פונקציונליות</a>
+        <a href="#acceptance">בדיקות קבלה</a>
+        <a href="#methods">צורות בדיקה</a>
+    </div>
+
+    <div class="container">
+        <h1>מדריך מקיף לסוגי בדיקות תוכנה</h1>
+        
+        <p class="highlight">האם המערכת עושה את מה שהיא צריכה לעשות ביחס לאפיון או לדרישות?</p>
+
+        <div class="mobile-web-box">
+            <div><strong>MOBILE Testing</strong> - בדיקה על מכשירים ניידים, טאבלטים ומערכות הפעלה ייעודיות.</div>
+            <div><strong>WEB Testing</strong> - בדיקה על דפדפנים שונים וסביבות אינטרנט.</div>
+        </div>
+
+        <h2 id="func">1. בדיקות פונקציונליות (Functional Testing)</h2>
+        <p>בדיקות המבוצעות בכל שלבי פיתוח המוצר כדי לוודא עמידה בדרישות.</p>
+
+        <div class="test-card">
+            <h3>טכניקות קופסה שחורה</h3>
+            <ul>
+                <li><span class="highlight">ניתוח ערכי קצה (BVA):</span> תכנון מקרי בדיקה המבוסס על הגבולות של טווחי הקלט.</li>
+                <li><span class="highlight">מחלקות שקילות:</span> חלוקת הקלט לקבוצות שבהן ההתנהגות צפויה להיות זהה.</li>
+                <li><span class="highlight">טבלאות החלטה:</span> הצגת קומבינציות של קלטים וסיבות יחד עם התוצאות שלהם.</li>
+                <li><span class="highlight">מכונת מצבים (State Transition):</span> בדיקת מעברים תקפים ובלתי תקפים בין מצבי מערכת.</li>
+                <li><span class="highlight">מקרי שימוש (Use Cases):</span> תרחישי משתמש אמיתיים (למשל: תרחיש קנייה באתר).</li>
+            </ul>
+        </div>
+
+        <div class="test-card">
+            <h3>בדיקות פונקציונליות נוספות</h3>
+            <p><strong>בדיקות מערכת:</strong> אימות שהמערכת עומדת בדרישות כולה (System Level).</p>
+            <p><strong>אינטגרציה (Integration):</strong> בדיקת התממשקויות בין רכיבים ומערכות חיצוניות.</p>
+            <p><strong>בדיקות שדה (Field Testing):</strong> בדיקות בסביבה המדמה תנאי שטח אמיתיים.</p>
+        </div>
+
+        <h2 id="non-func">2. בדיקות לא פונקציונליות (Non-Functional)</h2>
+        <p>בוחנות "כמה טוב" המערכת עובדת, ביצועים ויציבות.</p>
+
+        
+
+
+
+        <div class="test-card">
+            <ul>
+                <li><span class="highlight">בדיקות עומסים (Load):</span> מדידת התנהגות מול עומס הולך וגדל (משתמשים מקבילים).</li>
+                <li><span class="highlight">בדיקות מאמץ (Stress):</span> מציאת נקודת הקריסה של המערכת מחוץ לגבולות הדרישות.</li>
+                <li><span class="highlight">בדיקות ביצועים (Performance):</span> קביעת מדדים מדידים כמו זמני תגובה.</li>
+                <li><span class="highlight">נפח (Volume):</span> בדיקה כאשר בסיס הנתונים מלא (80% ומעלה).</li>
+                <li><span class="highlight">התאוששות (Recoverability):</span> זמן חזרה לתפקוד ושחזור מידע לאחר אסון (הפסקת חשמל).</li>
+                <li><span class="highlight">אבטחת מידע (Security):</span> עמידות בפני פריצות והתקפות האקרים.</li>
+                <li><span class="highlight">שמישות (Usability/UX):</span> בדיקה כמה המוצר ידידותי, אינטואיטיבי וקל ללמידה.</li>
+            </ul>
+        </div>
+
+        <h2 id="acceptance">3. בדיקות קבלה (Acceptance Testing)</h2>
+        <p>בדיקות פורמליות המיועדות לעזור ללקוח להחליט אם לקבל את המערכת.</p>
+
+        <div class="test-card">
+            <ul>
+                <li><span class="highlight">FAT (Factory Acceptance):</span> בדיקות מסירה אצל היצרן.</li>
+                <li><span class="highlight">SAT (Site Acceptance):</span> בדיקות קבלה בבית הלקוח.</li>
+                <li><span class="highlight">ATP (Procedure):</span> הבדיקות הרשמיות לפי סעיפי חוזה.</li>
+                <li><span class="highlight">RUN DRY:</span> סבבי הרצה פנימיים לפני האירוע הרשמי.</li>
+                <li><span class="highlight">רגולציה:</span> עמידה בתקנים תעשייתיים וחוקיים.</li>
+            </ul>
+        </div>
+
+        <h2 id="methods">4. צורות ושיטות בדיקה</h2>
+
+        
+
+        <div class="test-card">
+            <p><span class="highlight">רגרסיה (Regression):</span> וידוא ששינוי בתוכנה לא הרס פונקציונליות קיימת.</p>
+            <p><span class="highlight">בדיקות חוזרות (Re-testing):</span> הרצה של טסטים שנכשלו כדי לוודא תיקון באג.</p>
+            <p><span class="highlight">שפיות (Sanity):</span> בדיקה בסיסית ומהירה של כלל המערכת.</p>
+            <p><span class="highlight">עשן (Smoke):</span> בדיקה ראשונית ביותר (תחושתית) לוודא שהמערכת "נושמת".</p>
+            <p><span class="highlight">חקירה (Exploratory):</span> בדיקה חופשית שבה הבודק לומד ומעצב את הטסטים תוך כדי תנועה.</p>
+            <p><span class="highlight">ניחוש טעויות:</span> שימוש בניסיון כדי לחזות היכן המפתחים טעו.</p>
+        </div>
+    </div>
+    <footer style="text-align: center; margin-top: 40px; color: #888;">
+        מדריך QA לבודקי תוכנה &copy; 2026
+    </footer>
+
+</body>
+</html>

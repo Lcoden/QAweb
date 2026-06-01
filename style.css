@@ -1,0 +1,267 @@
+/* הגדרות כלליות ואיפוס */
+:root {
+    --primary-color: oklab(79.54299999999999% 0.09374 -0.04417);   /* כחול מודרני */
+    --secondary-color: #f1acef;  /* כחול כהה/אפור */
+    --accent-color: #ffc0cb; /* צבע דגש */
+    --bg-color: #fff0f5;        /* רקע בהיר מאוד */
+    --text-color: #334155;       /* צבע טקסט קריא */
+    --white: #ffffff;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    direction: rtl; /* תמיכה בעברית */
+}
+
+/* מיכל ראשי */
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* כותרות */
+h1 {
+    font-size: 2.5rem;
+    color: #8a0085;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+h2 {
+    color: #8a0085;
+    margin: 2rem 0 1rem;
+    border-right: 4px solid var(--primary-color);
+    padding-right: 15px;
+}
+
+/* עיצוב כרטיסיות (Cards) */
+.section-card {
+    background: var(--primary-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* טבלאות מעוצבות */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+    padding: 1rem;
+    text-align: right;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+/* רשימות */
+ul {
+    list-style-type: none;
+    padding-right: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+li::before {
+    content: '←';
+    position: absolute;
+    right: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* תגיות (Badges) לסטטוסים */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+/* התאמה לניידים */
+@media (max-width: 768px) {
+    h1 { font-size: 1.8rem; }
+    .section-card { padding: 1.5rem; }
+    table { font-size: 0.9rem; }
+}
+
+
+/* עיצוב סרגל הניווט */
+.navbar {
+    background-color: pink;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.nav-logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;               /* הופך את הרשימה לגמישה */
+    flex-direction: row;         /* מסדר את האיברים בשורה */
+    flex-wrap: nowrap;           /* מונע מהם לרדת שורה */
+    justify-content: space-around; /* יוצר רווח שווה בין הפריטים */
+    right: 50px;
+    list-style: none;            /* מבטל את הנקודות של הרשימה */
+    margin: 0;
+    padding: 0;
+    width: 100%;                 /* פריסה על כל רוחב הסרגל */
+}
+
+.nav-menu li {
+    white-space: nowrap;         /* מבטיח שהטקסט בתוך הקישור לא יישבר לשתי שורות */
+    content: '';                 /* מבטל את החץ לפני כל פריט ברשימה */
+}
+
+.nav-menu li::before{
+    content: none;
+}
+
+.nav-menu a {
+    color: #c731a6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: pink;
+}
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* הגדרות לקופסה שמכילה חץ */
+.process-step {
+    position: relative; /* נחוץ כדי למקם את החץ ביחס לקופסה */
+}
+
+/* יצירת החץ */
+.process-step::after {
+    content: '↓'; /* אפשר להשתמש באייקון או בסימן חץ */
+    position: absolute;
+    bottom: -25px; /* מציב את החץ מתחת לקופסה */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #1a5e5e;
+    font-weight: bold;
+    z-index: 10;
+}
+
+
+
+
+@media (min-width: 769px) {
+    .process-step:nth-child(1)::after {
+        content: '↓'; /* חץ בין 1 ל2*/
+        bottom: -35px;
+        right: 50%;
+    }
+    
+}
+    
+    .process-step:nth-child(2)::after {
+        content: '→'; /* חץ בין 4 ל1*/
+        bottom: -30px;
+        left: auto;
+        right: -35px;
+        top: 50%;
+    }
+
+    .process-step:nth-child(3)::after {
+        content: '←'; /* חץ בין 2 ל3*/
+        bottom: -30px;
+        right: auto;
+        left: -15px;
+        top: 50%;
+        
+    }
+
+     .process-step:nth-child(4)::after {
+        content: '↑'; /* חץ בין 3 ל4*/
+        bottom: -50px;
+        left: 50%;
+        top: -35px;
+     
+    }

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תהליך הבדיקות - QA</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+         body {
+            background-color: #fce4ec; /* ורוד בהיר מאוד */
+            background-image: url('https://www.transparenttextures.com/patterns/graphy.png');                
+            background-position: 0 0, 50px 50px;
+            background-size: 100px 100px;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-top: 40px;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .process-step {
+            background-color: lab(36.66% 41.71 -9.18); 
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .step-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            border-bottom: 2px solid hsl(300, 76%, 77%);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .step-content {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .process-info {
+            text-align: center;
+            background: #faaddc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-right: 5px solid hsl(290, 57%, 24%);
+        }
+
+        /* התאמה לניידים - שכל קופסה תהיה בשורה נפרדת */
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="home.html">דף הבית</a></li>
+                <li><a href="page1.html">סיכום בדיקות</a></li>
+                <li><a href="page2.html">סביבות בדיקה</a></li>
+                <li><a href="page3.html">מושגים בתקשורת</a></li>
+                <li><a href="page4.html">טכניקות בדיקה</a></li>
+                <li><a href="page5.html">תהליך הבדיקות</a></li>
+                <li><a href="page6.html">מסמכי בדיקות</a></li>
+                <li><a href="page7.html">ניהול תקלות</a></li>
+                <li><a href="page8.html">שיטת הAGILE</a></li>
+               
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>מעגל הבדיקות</h1>
+        
+        <div class="process-info">
+            <strong>*תרחישי בדיקה:</strong> פעולות שעושים והתוצאות שצפויות להתקבל.
+        </div>
+
+        <div class="process-grid">
+            
+            <div class="process-step">
+                <div class="step-title">תכנון הבדיקות</div>
+                <div class="step-content">
+                    וידוא שדרישות המוצר ברורות ומתכננים את מהלך ביצוע הבדיקות. בתכנון מחליטים מה רוצים לבדוק.
+                </div>
+            </div>
+
+           <div class="process-step">
+                <div class="step-title">דיווח תוצאות</div>
+                <div class="step-content">
+                    בשלב זה בודקים כמה אחוז מכלל הבדיקות עברו, כמה נכשלו, מהי החומרה והדחיפות של הבעיות שנמצאו וכו'.
+                </div>
+            </div>
+
+           
+            <div class="process-step">
+                <div class="step-title">כתיבת בדיקות</div>
+                <div class="step-content">
+                    כותבים תרחישי בדיקה ומקרי בדיקה שהם למעשה חזרה על תרחישי בדיקה מסוימים אבל בהתאמה לסיטואציות שונות.
+                </div>
+            </div>
+
+           
+            
+            <div class="process-step">
+                <div class="step-title">הרצת הבדיקות ואיתור תקלות</div>
+                <div class="step-content">
+                    ביצוע הבדיקות בפועל. בשלב זה עובדים לפי הבדיקות שתוכננו ונכתבו ומתקבלת תמונת מצב של איזה בדיקות עברו ואיזה נכשלו.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <section class="section-card" style="border-top: 5px solid hsl(290, 57%, 24%);">
+            <h2>אפיון ודרישות המוצר</h2>
+            <div class="concepts-grid">
+                <div class="concept-item">
+                    <strong>אפיון:</strong> 
+                    תהליך בו מבינים מה המוצר אמור לעשות ואיך.
+                </div>
+                <div class="concept-item">
+                    <strong>דרישות:</strong> 
+                    מגדירות בצורה ברורה את מהות המוצר.
+                </div>
+            </div>
+
+            <div class="network-section" style="margin-top: 20px;">
+                <h3>פרמטרים לניתוח אפיון :</h3>
+                <ul class="custom-list">
+                    <li>&starf; סוג התוכנה ומהות המוצר</li>
+                    <li>&starf; קהל היעד של המערכת</li>
+                    <li>&starf; איתור פערים ובעיות באפיון</li>
+                    <li>&starf; המלצות לשיפור המוצר</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <section class="section-card" style="background-color: hsl(300, 100%, 93%);">
+            <h2>מדדי מורכבות המערכת</h2>
+            <div class="complexity-container" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                <span class="status-badge" style="background: hsl(327, 100%, 75%);">רמת פונקציות</span>
+                <span class="status-badge" style="background: hsl(327, 100%, 75%);">רמת חישובים</span>
+                <span class="status-badge" style="background: hsl(327, 100%, 75%);">רמת טכנולוגיה</span>
+                <span class="status-badge" style="background: hsl(327, 100%, 75%);">רמת התממשקות</span>
+                <span class="status-badge" style="background: hsl(327, 100%, 75%);">רמת סיכון</span>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <section class="section-card">
+            <h2>פרמטרים לניתוח בדיקות (DOD)</h2>
+            <p style="font-size: 0.9rem; color: #666;">*יש לוודא את קיום הפרמטרים הבאים לפני ובמהלך כתיבת הבדיקות:*</p>
+            
+            <div class="checklist-item" style="border-bottom: 1px solid #eee; padding: 15px 0;">
+                <h4 style="margin: 0; color: #b000b0;">✅ הבנת מטרת הבדיקה</h4>
+                <p style="margin: 5px 0;">נוודא שהסיבה לכתיבת הבדיקה ברורה ושהיא עונה על מטרת ה-DOD (Definition of Done).</p>
+            </div>
+
+            <div class="checklist-item" style="border-bottom: 1px solid #eee; padding: 15px 0;">
+                <h4 style="margin: 0; color: #b000b0;">✅ כיסוי הבדיקה</h4>
+                <p style="margin: 5px 0;">נוודא שסט הבדיקות כולל מערך מגוון של פעולות המבטיחות הערכה מקיפה שתכסה באופן איכותי ומקצועי את הדרישה המקורית.</p>
+            </div>
+
+            <div class="checklist-item" style="border-bottom: 1px solid #eee; padding: 15px 0;">
+                <h4 style="margin: 0; color: #b000b0;">✅ הערכת תנאים מקדימים</h4>
+                <p style="margin: 5px 0;">נבדוק לעומק אילו תנאים הבדיקות שכתבנו דורשות ונוודא שהם מתקיימים בסביבת הבדיקה.</p>
+            </div>
+
+            <div class="checklist-item" style="padding: 15px 0;">
+                <h4 style="margin: 0; color: #b000b0;">✅ בחינת ממשקים</h4>
+                <p style="margin: 5px 0;">נבחן האם הבדיקות דורשות קיום של ממשקים (Interfaces) כלשהם מול מערכות אחרות במוצר או מחוצה לו.</p>
+            </div>
+        </section>
+    </div>
+    <footer style="text-align: center; margin-top: 40px; color: #888;">
+        מדריך QA לבודקי תוכנה &copy; 2026
+    </footer>
+</body>
+</html>

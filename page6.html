@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מסמכי בדיקה - QA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* עיצוב המדמה דף מסמך */
+        .document-page {
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .doc-header {
+            border-bottom: 3px solid hsl(332, 57%, 24%);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+
+        .doc-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-align: center;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .doc-subtitle {
+            text-align: right;
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .doc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .doc-table td {
+            padding: 12px;
+            border: 1px solid #eee;
+        }
+
+        .label-cell {
+            background-color: #f9f9f9;
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .list-style {
+            line-height: 1.8;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+   <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="home.html">דף הבית</a></li>
+                <li><a href="page1.html">סיכום בדיקות</a></li>
+                <li><a href="page2.html">סביבות בדיקה</a></li>
+                <li><a href="page3.html">מושגים בתקשורת</a></li>
+                <li><a href="page4.html">טכניקות בדיקה</a></li>
+                <li><a href="page5.html">תהליך הבדיקות</a></li>
+                <li><a href="page6.html">מסמכי בדיקות</a></li>
+                <li><a href="page7.html">ניהול תקלות</a></li>
+                <li><a href="page8.html">שיטת הAGILE</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h1>מסמכי בדיקות</h1>
+
+        <div class="document-page" id="stp">
+            <div class="doc-header">
+                <div class="doc-title">STP - Software Test Plan</div>
+            </div>
+            <div class="doc-subtitle">מסמך תכנון הבדיקות :</div>
+            
+            <table class="doc-table">
+                <tr><td class="label-cell">TEST NAME</td><td>שם הבדיקה</td></tr>
+                <tr><td class="label-cell">TEST PURPOSE</td><td>מטרת הבדיקה</td></tr>
+                <tr><td class="label-cell">TEST SUBJECT</td><td>נושא הבדיקה</td></tr>
+                <tr><td class="label-cell">PRE CONDITIONS</td><td>תנאים מוקדמים לביצוע הבדיקה</td></tr>
+                <tr><td class="label-cell">COMMENTS</td><td>הערות</td></tr>
+                <tr><td class="label-cell">ATTACHMENTS</td><td>קישורים למסמכים נוספים במידת הצורך</td></tr>
+            </table>
+        </div>
+
+        <div class="document-page" id="std">
+            <div class="doc-header">
+                <div class="doc-title">STD - Software Test Description</div>
+            </div>
+            <div class="doc-subtitle">תרחיש בדיקה = מהלך הבדיקה :</div>
+            
+            <ul class="list-style">
+                <li><strong>STEP (צעדים)</strong> - הנחיות מדויקות לאיך לבצע את הבדיקה.</li>
+                <li><strong>התוצאה הצפויה</strong> - מה אמור לקרות כשנעשה צעד מסוים.</li>
+                <li><strong>תוצאה בפועל</strong></li>
+                <li><strong>האם הצעד עבר/נכשל</strong></li>
+                <li><strong>הערות</strong></li>
+            </ul>
+            <p style="background: lab(87.62% 12.39 -3.18); padding: 10px; border-right: 5px solid lab(70.56% 43.33 -0.48);">
+                <strong>*הרצת בדיקות:</strong> ביצוע בפועל של מה שתוכנן ונכתב בשלב התכנון וכתיבת הבדיקות.
+            </p>
+        </div>
+
+        <div class="document-page" id="str">
+            <div class="doc-header">
+                <div class="doc-title">STR - Software Test Report</div>
+            </div>
+            <p>פורמט מובנה שמעביר בצורה מסודרת את כל המידע.</p>
+            
+            <h3>פרמטרים שיכללו בדיווח:</h3>
+            <ul class="list-style">
+                <li>נדווח על הבדיקות הספציפיות שנעשו.</li>
+                <li>כמות התקלות שנמצאו, רמת החומרה, רמת הדחיפות, איפה נמצאות התקלות, השוואה בין כמות הבדיקות בסבבים, המלצות להמשך.</li>
+            </ul>
+
+            <h3>קריטריונים לניתוח תוצאות:</h3>
+            <ul class="list-style">
+                <li>ביצוע בדיקות בפועל - כמה בדיקות בוצעו מתוך הבדיקות שנכתבו.</li>
+                <li>אחוז הבדיקות שעברו בהצלחה.</li>
+                <li>כיסוי דרישות - כמה דרישות כוסו.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; margin-top: 40px; color: #888;">
+        מדריך QA לבודקי תוכנה &copy; 2026
+    </footer>
+    
+</body>
+</html>
